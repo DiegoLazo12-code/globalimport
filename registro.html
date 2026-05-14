@@ -39,11 +39,12 @@
                     </label>
                     <label class="field-group">
                         <span>RUT / Documento*</span>
-                        <input type="text" name="documento" required placeholder="12.345.678-9" />
+                        <input type="text" name="documento" required placeholder="12345678" />
                     </label>
                     <label class="field-group">
-                        <span>Género</span>
-                        <select name="genero">
+                        <span>Género*</span>
+                        <select name="genero" required>
+                            <option value="" disabled selected>Selecciona género</option>
                             <option value="masculino">Masculino</option>
                             <option value="femenino">Femenino</option>
                             <option value="no-binario">No binario</option>
@@ -51,8 +52,9 @@
                         </select>
                     </label>
                     <label class="field-group full-width">
-                        <span>Nacionalidad</span>
-                        <select name="nacionalidad">
+                        <span>Nacionalidad*</span>
+                        <select name="nacionalidad" required>
+                            <option value="" disabled selected>Selecciona nacionalidad</option>
                             <option value="argentina">Argentina</option>
                             <option value="chile">Chile</option>
                             <option value="brasil">Brasil</option>
@@ -83,6 +85,12 @@
                     <label class="field-group">
                         <span>Contraseña*</span>
                         <input type="password" name="password" required placeholder="********" />
+                        <div class="strength-indicator">
+                            <p>Fuerza de contraseña</p>
+                            <div class="strength-bar">
+                                <span class="strength-fill"></span>
+                            </div>
+                        </div>
                     </label>
                     <label class="field-group">
                         <span>Confirmar contraseña*</span>
@@ -92,12 +100,6 @@
                         <span>Teléfono*</span>
                         <input type="tel" name="telefono" required placeholder="+54 11 1234 5678" />
                     </label>
-                </div>
-                <div class="strength-indicator">
-                    <p>Fuerza de contraseña</p>
-                    <div class="strength-bar">
-                        <span class="strength-fill"></span>
-                    </div>
                 </div>
             </section>
 
@@ -110,6 +112,7 @@
                     <label class="field-group">
                         <span>País*</span>
                         <select name="pais" required>
+                            <option value="" disabled selected>Selecciona país</option>
                             <option value="argentina">Argentina</option>
                             <option value="chile">Chile</option>
                             <option value="brasil">Brasil</option>
@@ -143,6 +146,7 @@
                     <label class="field-group full-width">
                         <span>Referencia / Instrucciones adicionales</span>
                         <textarea name="referencia" maxlength="200" placeholder="Opcional: ejemplo punto de referencia"></textarea>
+                        <p class="field-hint"><span class="char-count">0</span>/200 caracteres</p>
                     </label>
                 </div>
             </section>
@@ -183,6 +187,7 @@
             </section>
 
             <div class="form-actions">
+                <a href="index.html" class="btn-secondary">Volver a la página principal</a>
                 <button type="submit" class="btn-primary">Registrarme</button>
                 <button type="reset" class="btn-secondary">Limpiar formulario</button>
             </div>
@@ -190,5 +195,6 @@
             <p class="login-link">Ya tengo cuenta, <a href="#">iniciar sesión</a>.</p>
         </form>
     </div>
+    <script src="validaciones.js" defer></script>
 </body>
 </html>

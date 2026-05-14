@@ -228,6 +228,26 @@ select {
     accent-color: var(--color-primary);
 }
 
+.input-error {
+    border-color: #dc2626 !important;
+}
+
+.checkbox-error {
+    border-color: #dc2626 !important;
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.92rem;
+    margin-top: 0.35rem;
+}
+
+.field-hint {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
 .strength-indicator {
     margin-top: 1rem;
     display: grid;
