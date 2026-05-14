@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | GlobalImport S.A.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="form-header">
+            <div class="brand">
+                <img src="assets/imagenes/logo.png" alt="Logo GlobalImport">
+                <div>
+                    <p class="brand-label">GlobalImport S.A.</p>
+                    <h1>Formulario de Registro</h1>
+                </div>
+            </div>
+            <p class="form-intro">Completa tus datos para acceder a nuestras importaciones y recibir ofertas de productos.</p>
+        </header>
+
+        <form class="register-form" action="#" method="post" novalidate>
+            <section class="form-section">
+                <div class="section-heading">
+                    <span>Sección A</span>
+                    <h2>Datos Personales</h2>
+                </div>
+                <div class="fields-grid">
+                    <label class="field-group">
+                        <span>Nombre completo*</span>
+                        <input type="text" name="nombre" required placeholder="Juan Pérez" />
+                    </label>
+                    <label class="field-group">
+                        <span>Fecha de nacimiento*</span>
+                        <input type="date" name="nacimiento" required />
+                    </label>
+                    <label class="field-group">
+                        <span>RUT / Documento*</span>
+                        <input type="text" name="documento" required placeholder="12.345.678-9" />
+                    </label>
+                    <label class="field-group">
+                        <span>Género</span>
+                        <select name="genero">
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="no-binario">No binario</option>
+                            <option value="prefiero-no-decir">Prefiero no decir</option>
+                        </select>
+                    </label>
+                    <label class="field-group full-width">
+                        <span>Nacionalidad</span>
+                        <select name="nacionalidad">
+                            <option value="argentina">Argentina</option>
+                            <option value="chile">Chile</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="uruguay">Uruguay</option>
+                            <option value="paraguay">Paraguay</option>
+                            <option value="mexico">México</option>
+                            <option value="peru">Perú</option>
+                            <option value="colombia">Colombia</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+
+            <section class="form-section alternate">
+                <div class="section-heading">
+                    <span>Sección B</span>
+                    <h2>Datos de Contacto y Acceso</h2>
+                </div>
+                <div class="fields-grid">
+                    <label class="field-group">
+                        <span>Correo electrónico*</span>
+                        <input type="email" name="email" required placeholder="ejemplo@correo.com" />
+                    </label>
+                    <label class="field-group">
+                        <span>Confirmar correo electrónico*</span>
+                        <input type="email" name="email_confirm" required placeholder="ejemplo@correo.com" />
+                    </label>
+                    <label class="field-group">
+                        <span>Contraseña*</span>
+                        <input type="password" name="password" required placeholder="********" />
+                    </label>
+                    <label class="field-group">
+                        <span>Confirmar contraseña*</span>
+                        <input type="password" name="password_confirm" required placeholder="********" />
+                    </label>
+                    <label class="field-group full-width">
+                        <span>Teléfono*</span>
+                        <input type="tel" name="telefono" required placeholder="+54 11 1234 5678" />
+                    </label>
+                </div>
+                <div class="strength-indicator">
+                    <p>Fuerza de contraseña</p>
+                    <div class="strength-bar">
+                        <span class="strength-fill"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <div class="section-heading">
+                    <span>Sección C</span>
+                    <h2>Dirección de Entrega</h2>
+                </div>
+                <div class="fields-grid">
+                    <label class="field-group">
+                        <span>País*</span>
+                        <select name="pais" required>
+                            <option value="argentina">Argentina</option>
+                            <option value="chile">Chile</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="uruguay">Uruguay</option>
+                            <option value="paraguay">Paraguay</option>
+                            <option value="mexico">México</option>
+                            <option value="peru">Perú</option>
+                            <option value="colombia">Colombia</option>
+                        </select>
+                    </label>
+                    <label class="field-group">
+                        <span>Provincia / Estado*</span>
+                        <input type="text" name="provincia" required placeholder="Buenos Aires" />
+                    </label>
+                    <label class="field-group">
+                        <span>Ciudad*</span>
+                        <input type="text" name="ciudad" required placeholder="Ciudad Autónoma" />
+                    </label>
+                    <label class="field-group">
+                        <span>Calle y número*</span>
+                        <input type="text" name="calle" required placeholder="Av. Siempre Viva 742" />
+                    </label>
+                    <label class="field-group">
+                        <span>Código postal*</span>
+                        <input type="text" name="codigo_postal" required placeholder="C1001ABC" />
+                    </label>
+                    <label class="field-group full-width">
+                        <span>Piso y departamento</span>
+                        <input type="text" name="piso_departamento" placeholder="Piso 3, Dpto. B" />
+                    </label>
+                    <label class="field-group full-width">
+                        <span>Referencia / Instrucciones adicionales</span>
+                        <textarea name="referencia" maxlength="200" placeholder="Opcional: ejemplo punto de referencia"></textarea>
+                    </label>
+                </div>
+            </section>
+
+            <section class="form-section alternate">
+                <div class="section-heading">
+                    <span>Sección D</span>
+                    <h2>Preferencias y Términos</h2>
+                </div>
+                <div class="fields-grid checkbox-grid">
+                    <fieldset class="checkbox-group">
+                        <legend>Categorías de interés</legend>
+                        <label><input type="checkbox" name="categoria" value="electronica"> Electrónica</label>
+                        <label><input type="checkbox" name="categoria" value="indumentaria"> Indumentaria</label>
+                        <label><input type="checkbox" name="categoria" value="hogar"> Hogar</label>
+                        <label><input type="checkbox" name="categoria" value="otros"> Otros</label>
+                    </fieldset>
+                    <fieldset class="checkbox-group">
+                        <legend>Tipo de cliente</legend>
+                        <label><input type="radio" name="cliente" value="consumidor" checked> Consumidor final</label>
+                        <label><input type="radio" name="cliente" value="revendedor"> Revendedor</label>
+                        <label><input type="radio" name="cliente" value="empresa"> Empresa</label>
+                    </fieldset>
+                    <label class="field-group full-width">
+                        <span>¿Cómo nos conociste?</span>
+                        <select name="conociste">
+                            <option value="redes-sociales">Redes sociales</option>
+                            <option value="recomendacion">Recomendación</option>
+                            <option value="busqueda-web">Búsqueda web</option>
+                            <option value="publicidad">Publicidad</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </label>
+                    <label class="checkbox-inline"><input type="checkbox" name="newsletter"> Suscribirme al newsletter</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="terminos" required> Acepto los <a href="#">Términos y Condiciones</a></label>
+                    <label class="checkbox-inline"><input type="checkbox" name="privacidad" required> Acepto la <a href="#">Política de Privacidad</a></label>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Registrarme</button>
+                <button type="reset" class="btn-secondary">Limpiar formulario</button>
+            </div>
+
+            <p class="login-link">Ya tengo cuenta, <a href="#">iniciar sesión</a>.</p>
+        </form>
+    </div>
+</body>
+</html>
