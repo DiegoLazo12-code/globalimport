@@ -1,6 +1,9 @@
 const form = document.querySelector('.register-form');
 const referenciaField = form.querySelector('textarea[name="referencia"]');
 const charCount = document.querySelector('.char-count');
+const passwordInput = form.querySelector('input[name="password"]');
+const strengthFill = document.querySelector('.strength-fill');
+const strengthLabel = document.querySelector('.strength-indicator p');
 
 const validators = {
     nombre(value) {
@@ -112,6 +115,44 @@ function updateCharCount() {
     } else {
         referenciaField.classList.remove('input-error');
     }
+}
+
+function evaluatePasswordStrength(password) {
+    let score = 0;
+    if (password.length >= 8) score += 1;
+    if (/[A-Z]/.test(password)) score += 1;
+    if (/[0-9]/.test(password)) score += 1;
+    if (/[!@#$%^&*]/.test(password)) score += 1;
+    if (password.length >= 12) score += 1;
+    return score;
+}
+
+function getStrengthInfo(score) {
+    if (score === 0) {
+        return { label: 'Sin contraseña', width: '0%', color: '#cbd5e1' };
+    }
+    if (score === 1) {
+        return { label: 'Muy débil', width: '20%', color: '#dc2626' };
+    }
+    if (score === 2) {
+        return { label: 'Débil', width: '40%', color: '#f97316' };
+    }
+    if (score === 3) {
+        return { label: 'Regular', width: '60%', color: '#eab308' };
+    }
+    if (score === 4) {
+        return { label: 'Buena', width: '80%', color: '#22c55e' };
+    }
+    return { label: 'Excelente', width: '100%', color: '#16a34a' };
+}
+
+function updatePasswordStrength() {
+    if (!passwordInput || !strengthFill || !strengthLabel) return;
+    const score = evaluatePasswordStrength(passwordInput.value);
+    const strength = getStrengthInfo(score);
+    strengthFill.style.width = strength.width;
+    strengthFill.style.backgroundColor = strength.color;
+    strengthLabel.textContent = `Fuerza de contraseña: ${strength.label}`;
 }
 
 form.addEventListener('submit', event => {
@@ -277,7 +318,12 @@ form.addEventListener('input', event => {
     if (target === referenciaField) {
         updateCharCount();
     }
+    if (target === passwordInput) {
+        updatePasswordStrength();
+    }
 });
 
 referenciaField.addEventListener('input', updateCharCount);
+passwordInput.addEventListener('input', updatePasswordStrength);
 updateCharCount();
+updatePasswordStrength();
